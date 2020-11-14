@@ -23,9 +23,16 @@
     <div id="app">
         <nav class="navbar fixed-top navbar-expand-md navbar-light shadow-sm" style="background-color: #02132D;">
             <div class="container">
-                <a class="navbar-brand text-bold text-white" href="{{ url('/') }}">
-                    {{ config('app.name', 'Movie Market') }}
-                </a>
+                @auth
+                    <a class="navbar-brand text-bold text-white" href="{{ url('/home') }}">
+                        {{ config('app.name', 'Movie Market') }}
+                    </a>
+                @else
+                    <a class="navbar-brand text-bold text-white" href="{{ url('/') }}">
+                        {{ config('app.name', 'Movie Market') }}
+                    </a>
+                @endauth
+                
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -72,7 +79,7 @@
             </div>
         </nav>
 
-        <main>
+        <main style="margin-top: 5em">
             @yield('content')
         </main>
     </div>

@@ -18,3 +18,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/create', 'MovieController@create')->middleware('role:admin');
+Route::get('logout', function (){
+    Auth::logout();
+    Session()->flush();
+    return Redirect::to('/');
+})->name('logout');
