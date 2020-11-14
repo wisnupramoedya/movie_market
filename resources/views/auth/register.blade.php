@@ -69,7 +69,7 @@
                                 <label class="form-check-label" for="inlineRadio1">Seller</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="role" id="option2" value="biasa">
+                                <input class="form-check-input" type="radio" name="role" id="option2" value="user">
                                 <label class="form-check-label" for="inlineRadio2">Customer</label>
                             </div>
                         </div>
