@@ -1,1 +1,0 @@
-<h1>HAI CUSTOMER</h1>

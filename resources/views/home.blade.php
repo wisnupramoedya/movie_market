@@ -38,6 +38,6 @@
         </div>
         @endforeach
     </div>
-    {{$movies->appends(['sort' => 'votes'])->links()}}
+    {{$movies->links()}}
 </div>
 @endsection
