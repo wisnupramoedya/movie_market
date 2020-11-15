@@ -15,10 +15,12 @@ class CheckRole
      */
     public function handle($request, Closure $next, $role)
     {
-        if (!$request->user()->hasRole($role)){
+        if (!$request->user()) {
+            return redirect()->route('login');
+        }
+        if ($request->user()->role != $role){
             return redirect()->back();
         }
-        return view('biasa');
-        
+        return $next($request);
     }
 }
